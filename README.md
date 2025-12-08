@@ -2,8 +2,6 @@
 
 Hey there! 👋 This repo contains all the docs I put together for a **Moneytree API integration** project I worked on. It's basically a financial data aggregation system that syncs credit card data and transactions into an expense management platform. Pretty cool stuff!
 
-> **Note**: I've documented the architecture and design here, but no actual company code. This is all safe to share publicly.
-
 ## 📚 What's Inside
 
 ### 🚀 Start Here
