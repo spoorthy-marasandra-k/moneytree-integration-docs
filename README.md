@@ -16,9 +16,6 @@ Hey there! 👋 This repo contains all the docs I put together for a **Moneytree
 - **[FLOW_DIAGRAMS.md](./FLOW_DIAGRAMS.md)** - Visual flow diagrams for all the processes (OAuth flow, sync process, cleanup, etc.)
 - **[TECHNICAL_SPECS.md](./TECHNICAL_SPECS.md)** - All the technical details - API specs, database schema, service specifications
 
-### 💼 For Your Resume
-- **[RESUME_SUMMARY.md](./RESUME_SUMMARY.md)** - Key achievements and skills you can use for your resume/portfolio
-
 ## 🎯 What This Shows
 
 ### Technical Skills I Learned/Demonstrated
@@ -49,11 +46,6 @@ Hey there! 👋 This repo contains all the docs I put together for a **Moneytree
 1. **IMPLEMENTATION_GUIDE.md** - Follow this step-by-step
 2. **TECHNICAL_SPECS.md** - Reference for all the details
 3. **ARCHITECTURE.md** - Understand the design decisions
-
-### If You're Using This for Resume/Portfolio
-1. **RESUME_SUMMARY.md** - Key points and achievements
-2. **MONEYTREE_INTEGRATION_README.md** - Project overview
-3. **ARCHITECTURE.md** - Shows technical depth
 
 ## 🏗️ What This Project Does
 
@@ -125,74 +117,6 @@ This project really helped me understand:
 - Error handling and recovery (retry logic, graceful degradation)
 - Performance optimization (pagination, filtering, batching)
 - System architecture design (service layer, separation of concerns)
-
-## 📝 How to Use This
-
-### For Learning
-- Read through the docs in order (or jump around, I don't judge)
-- Study the flow diagrams (they're super helpful)
-- Review the architecture decisions (I explain why I did things a certain way)
-- Understand the implementation steps
-
-### For Portfolio
-- Use this to explain the project in interviews
-- Reference the architecture diagrams
-- Highlight key technical decisions
-- Show your understanding of system design
-
-### For Resume
-- Extract key achievements from RESUME_SUMMARY.md
-- Try to quantify impact where possible
-- Highlight specific technical skills
-- Show problem-solving abilities
-
-## 🔒 Important Notes
-
-- This documentation is **architecture and design focused** - no actual code
-- **No proprietary code** is included (all safe!)
-- Documentation is **resume/portfolio ready**
-- Can be shared publicly on GitHub
-- Demonstrates understanding without exposing company code
-
-## 📞 Project Structure
-
-```
-.
-├── README.md                          # Main readme (or this file)
-├── QUICK_START.md                     # Beginner-friendly intro
-├── MONEYTREE_INTEGRATION_README.md   # Project overview
-├── IMPLEMENTATION_GUIDE.md            # Step-by-step implementation
-├── ARCHITECTURE.md                    # System architecture
-├── FLOW_DIAGRAMS.md                   # Visual flows
-├── TECHNICAL_SPECS.md                 # Technical specs
-└── RESUME_SUMMARY.md                  # Resume stuff
-```
-
-## 🚀 Next Steps
-
-1. **Read QUICK_START.md** - Understand the basics first
-2. **Review the architecture** - See how everything fits together
-3. **Study the flow diagrams** - Visual understanding is key
-4. **Read the implementation guide** - If you want to build something similar
-5. **Use RESUME_SUMMARY.md** - For your resume/portfolio
-
-## 💡 Pro Tips
-
-- Start with QUICK_START.md if you're completely new to this
-- Use FLOW_DIAGRAMS.md if you're a visual learner (like me!)
-- Reference TECHNICAL_SPECS.md when you're actually implementing
-- Use RESUME_SUMMARY.md when prepping for interviews
-
-## 🤔 Things I'd Do Differently (Hindsight is 20/20)
-
-- Maybe add more comprehensive error logging from the start
-- Consider using a job queue system (Sidekiq/Resque) instead of just Rake tasks
-- Add more monitoring/metrics for production
-- Maybe cache some API responses to reduce calls
-
-But overall, I'm pretty happy with how this turned out! The architecture is solid and it handles edge cases well.
-
----
 
 **Final Note**: This documentation was created for educational and portfolio purposes. It shows my understanding of financial API integration, OAuth 2.0, and system architecture without including any proprietary code. Feel free to use it as a reference or learning resource!
 
