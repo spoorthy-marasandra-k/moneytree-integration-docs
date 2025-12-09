@@ -1,10 +1,8 @@
 # Moneytree API Integration - Financial Data Aggregation System
 
-## 📋 Overview
-
 This project demonstrates the implementation of a **Moneytree API integration** for a Rails-based expense management system. Moneytree is a financial data aggregation service that allows applications to securely access users' financial account information, including credit card transactions.
 
-## 🎯 Project Objectives
+## Project Objectives
 
 - **Automated Financial Data Sync**: Integrate with Moneytree API to automatically fetch credit card data and transactions
 - **OAuth 2.0 Authentication**: Implement secure token-based authentication flow
@@ -12,37 +10,37 @@ This project demonstrates the implementation of a **Moneytree API integration** 
 - **Expense Management Integration**: Link credit card transactions to expense reports for automated reimbursement processing
 - **Background Job Processing**: Implement scheduled tasks for data synchronization and cleanup
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```
-┌─────────────────┐
-│   Frontend UI   │
-│  (User Actions) │
-└────────┬────────┘
-         │
-         ▼
+       ┌─────────────────┐
+       │   Frontend UI   │
+       │  (User Actions) │
+       └────────┬────────┘
+                │
+                ▼
 ┌─────────────────────────────────────┐
-│      Rails Application              │
-│  ┌──────────────────────────────┐  │
-│  │  OAuth Controller            │  │
-│  │  - Authorization Flow        │  │
-│  │  - Token Management         │  │
-│  └──────────────────────────────┘  │
-│  ┌──────────────────────────────┐  │
-│  │  Service Layer              │  │
-│  │  - MoneytreeConnection      │  │
-│  │  - FetchCreditCard          │  │
-│  │  - FetchCreditCardStatement │  │
-│  └──────────────────────────────┘  │
-│  ┌──────────────────────────────┐  │
-│  │  Background Jobs (Rake)      │  │
-│  │  - Token Refresh            │  │
-│  │  - Data Sync                │  │
-│  │  - Cleanup Tasks            │  │
-│  └──────────────────────────────┘  │
-└────────┬───────────────────────────┘
-         │
-         ▼
+│        Rails Application            │
+│  ┌──────────────────────────────┐   │
+│  │  OAuth Controller            │   │
+│  │  - Authorization Flow        │   │
+│  │  - Token Management          │   │
+│  └──────────────────────────────┘   │
+│  ┌──────────────────────────────┐   │
+│  │  Service Layer               │   │
+│  │  - MoneytreeConnection       │   │
+│  │  - FetchCreditCard           │   │
+│  │  - FetchCreditCardStatement  │   │
+│  └──────────────────────────────┘   │
+│  ┌──────────────────────────────┐   │
+│  │  Background Jobs (Rake)      │   │
+│  │  - Token Refresh             │   │
+│  │  - Data Sync                 │   │
+│  │  - Cleanup Tasks             │   │
+│  └──────────────────────────────┘   │
+└─────────────────┬───────────────────┘  
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │      Moneytree API                  │
 │  - OAuth Endpoints                  │
@@ -51,7 +49,7 @@ This project demonstrates the implementation of a **Moneytree API integration** 
 └─────────────────────────────────────┘
 ```
 
-## 🔑 Key Features
+## Key Features
 
 ### 1. OAuth 2.0 Authentication Flow
 - Secure authorization code flow
@@ -83,7 +81,6 @@ This project demonstrates the implementation of a **Moneytree API integration** 
 - Cleanup of deleted cards (15-day grace period)
 - Email notifications for admins and users
 
-## 📊 Database Schema
 
 ### Core Models
 
@@ -108,7 +105,7 @@ This project demonstrates the implementation of a **Moneytree API integration** 
 - Expense records that can link to credit card statements
 - Part of expense reimbursement workflow
 
-## 🔄 Data Flow
+## Data Flow
 
 1. **Initial Setup**: User authorizes application → OAuth tokens stored
 2. **Scheduled Sync**: Background job fetches credit cards → Creates/updates records
@@ -116,7 +113,7 @@ This project demonstrates the implementation of a **Moneytree API integration** 
 4. **User Action**: User creates expense → Links to credit card statement
 5. **Cleanup**: Background job removes deleted cards after grace period
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Backend**: Ruby on Rails
 - **API Integration**: RESTful API with OAuth 2.0
@@ -124,34 +121,7 @@ This project demonstrates the implementation of a **Moneytree API integration** 
 - **Database**: PostgreSQL (assumed)
 - **Authentication**: OAuth 2.0 Authorization Code Flow
 
-## 📁 Project Structure
-
-```
-app/
-├── controllers/
-│   └── api/
-│       └── te_account_moneytrees_controller.rb  # OAuth endpoints
-├── models/
-│   ├── moneytree_login.rb                       # Token management
-│   ├── credit_card.rb                           # Card model
-│   └── credit_card_statement.rb                 # Transaction model
-├── services/
-│   ├── moneytree_connection.rb                  # API client
-│   ├── fetch_credit_card.rb                     # Card sync service
-│   └── fetch_credit_card_statement.rb           # Transaction sync service
-└── workers/
-    └── (background job processing)
-
-lib/
-└── tasks/
-    └── moneytree_api.rake                       # Scheduled tasks
-
-config/
-├── routes.rb                                     # API routes
-└── schedule.rb                                   # Job scheduling
-```
-
-## 🔐 Security Considerations
+## Security Considerations
 
 - OAuth 2.0 secure token exchange
 - HTTPS-only API communication
@@ -160,7 +130,7 @@ config/
 - Token refresh to minimize exposure window
 - Graceful error handling and logging
 
-## 📈 Performance Optimizations
+## Performance Optimizations
 
 - Pagination for large datasets (500 records per page)
 - Current month transaction filtering
@@ -168,30 +138,15 @@ config/
 - Efficient database queries with proper indexing
 - Deduplication to prevent duplicate records
 
-## 🚀 Getting Started
+## Getting Started
 
 See [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md) for detailed step-by-step implementation instructions.
 
-## 📚 Documentation
+## Documentation
 
 - [Architecture Details](./ARCHITECTURE.md) - Detailed system architecture
 - [Implementation Guide](./IMPLEMENTATION_GUIDE.md) - Step-by-step implementation
 - [API Flow Diagrams](./FLOW_DIAGRAMS.md) - Visual flow representations
 - [Technical Specifications](./TECHNICAL_SPECS.md) - Technical details
 
-## 🎓 Learning Outcomes
-
-This project demonstrates:
-- OAuth 2.0 implementation
-- Third-party API integration
-- Background job processing
-- Data synchronization patterns
-- Error handling and retry logic
-- Database design for financial data
-- Scheduled task management
-- Email notification systems
-
-## 📝 License
-
-This documentation is for portfolio/resume purposes only. Implementation details are based on real-world experience with financial API integrations.
 
