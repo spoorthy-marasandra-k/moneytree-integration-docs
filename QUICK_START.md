@@ -198,11 +198,6 @@ Think of background jobs like a personal assistant:
    - Create a simple API client
    - Practice with mock data
 
-4. **Add to Resume**
-   - Use `RESUME_SUMMARY.md` for key points
-   - Highlight specific achievements
-   - Quantify impact where possible
-
 ## Tips for Understanding
 
 1. **Start Simple**: Understand OAuth flow first, then data sync
